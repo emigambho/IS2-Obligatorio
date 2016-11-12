@@ -1,6 +1,5 @@
 package vuelouy.dominio;
 
-import java.applet.AudioClip;
 import javax.sound.sampled.Clip;
 
 /**
