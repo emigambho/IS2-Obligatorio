@@ -68,7 +68,6 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
         jepLectura = new javax.swing.JEditorPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListLibros = new javax.swing.JList<>();
-        jButtonLeer = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(664, 548));
 
@@ -97,18 +96,12 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jListLibros);
-
-        jButtonLeer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Leer.png"))); // NOI18N
-        jButtonLeer.setBorder(null);
-        jButtonLeer.setBorderPainted(false);
-        jButtonLeer.setContentAreaFilled(false);
-        jButtonLeer.setPreferredSize(new java.awt.Dimension(96, 96));
-        jButtonLeer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLeerActionPerformed(evt);
+        jListLibros.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListLibrosValueChanged(evt);
             }
         });
+        jScrollPane1.setViewportView(jListLibros);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,12 +116,10 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,14 +128,11 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
                 .addComponent(lblLectura)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonLeer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -154,19 +142,19 @@ public class MenuRevistas extends javax.swing.JPanel implements Observer {
         comunicacion.cambio();
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
-    private void jButtonLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeerActionPerformed
+    private void jListLibrosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListLibrosValueChanged
         String tituloSeleccionado = jListLibros.getSelectedValue();
         for (Libro libro : libros) {
             if(libro.getTitulo().equals(tituloSeleccionado)){
                 jepLectura.setText(libro.getContenido());
+                jepLectura.moveCaretPosition(0);
                 break;
             }
         }
-    }//GEN-LAST:event_jButtonLeerActionPerformed
+    }//GEN-LAST:event_jListLibrosValueChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLeer;
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JList<String> jListLibros;
     private javax.swing.JScrollPane jScrollPane1;
