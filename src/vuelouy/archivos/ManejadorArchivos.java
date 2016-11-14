@@ -29,31 +29,34 @@ public class ManejadorArchivos {
     public List<Libro> obetenerLibros(String idioma){
         List<Libro> libros = new ArrayList<>();
         final File folder = new File("C:\\Users\\emiga\\Desktop\\IS2\\Material\\VueloUY\\src\\vuelouy\\libros\\"+idioma);
-        for (final File fileEntry : folder.listFiles()) {
-            FileReader f = null;
-            try {
-                String cadena;
-                StringBuilder sb = new StringBuilder();
-                f = new FileReader(fileEntry);
-                BufferedReader b = new BufferedReader(f);
-                while((cadena = b.readLine())!=null) {
-                    sb.append(cadena);
-                }
-                String titulo = "";
-                if(fileEntry.getName() != null){
-                    titulo = fileEntry.getName().replace(".html","");
-                }
-                Libro libro = new Libro(titulo, sb.toString());
-                libros.add(libro);
-            } catch (IOException ex) {
-                    Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
+        if(folder.listFiles() != null){
+            for (final File fileEntry : folder.listFiles()) {
+                FileReader f = null;
                 try {
-                    f.close();
+                    String cadena;
+                    StringBuilder sb = new StringBuilder();
+                    f = new FileReader(fileEntry);
+                    BufferedReader b = new BufferedReader(f);
+                    while((cadena = b.readLine())!=null) {
+                        sb.append(cadena);
+                    }
+                    String titulo = "";
+                    if(fileEntry.getName() != null){
+                        titulo = fileEntry.getName().replace(".html","");
+                    }
+                    Libro libro = new Libro(titulo, sb.toString());
+                    libros.add(libro);
                 } catch (IOException ex) {
-                    Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+                } finally {
+                    try {
+                        f.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
+        
         }
         
         return libros;
