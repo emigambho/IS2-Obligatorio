@@ -104,7 +104,8 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         btnAleman.setBorderPainted(false);
         btnAleman.setContentAreaFilled(false);
         btnAleman.setPreferredSize(new java.awt.Dimension(96, 96));
-        btnAleman.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaAleman.png"))); // NOI18N
+        btnAleman.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaAlemanP.png"))); // NOI18N
+        btnAleman.setRequestFocusEnabled(false);
         btnAleman.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAlemanActionPerformed(evt);
@@ -116,7 +117,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
         btnItaliano.setBorderPainted(false);
         btnItaliano.setContentAreaFilled(false);
         btnItaliano.setPreferredSize(new java.awt.Dimension(96, 96));
-        btnItaliano.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaItaliano.png"))); // NOI18N
+        btnItaliano.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/IdiomaItalianoP.png"))); // NOI18N
         btnItaliano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnItalianoActionPerformed(evt);
@@ -129,24 +130,23 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblIdioma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblConfig)
+                .addGap(411, 411, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblConfig))
+                        .addComponent(btnFrances, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAleman, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnFrances, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAleman, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnItaliano, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(141, 141, Short.MAX_VALUE))
+                        .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnItaliano, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(106, 106, 106))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +155,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
                 .addComponent(lblConfig)
                 .addGap(54, 54, 54)
                 .addComponent(lblIdioma)
-                .addGap(68, 68, 68)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEspaniol, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIng, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,7 +164,7 @@ public class MenuConfiguracionPasajero extends javax.swing.JPanel implements Obs
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnFrances, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAleman, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(141, 141, 141))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

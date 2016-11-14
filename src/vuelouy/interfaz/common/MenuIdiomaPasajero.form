@@ -16,13 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-              <Component id="btnEspaniol" min="-2" pref="96" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
-              <Component id="btnIng" min="-2" pref="96" max="-2" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="589" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -30,23 +24,52 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
+          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnFrances" min="-2" pref="96" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnAleman" min="-2" pref="96" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnEspaniol1" min="-2" pref="96" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnIng1" min="-2" pref="96" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnItaliano" min="-2" pref="96" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="143" max="32767" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnEspaniol" min="-2" pref="96" max="-2" attributes="0"/>
-                  <Component id="btnIng" min="-2" pref="96" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="164" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="572" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="lblIdioma" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="457" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnEspaniol1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="btnIng1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="btnItaliano" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnFrances" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="btnAleman" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="187" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -64,28 +87,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnIng">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/vuelouy/image/IdiomaIng.png"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="null"/>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[96, 96]"/>
-        </Property>
-        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/vuelouy/image/IdiomaEngP.png"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIngActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnEspaniol">
+    <Component class="javax.swing.JButton" name="btnEspaniol1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/vuelouy/image/IdiomaEsp.png"/>
@@ -103,7 +105,91 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEspaniolActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEspaniol1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnIng1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaIng.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[96, 96]"/>
+        </Property>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaEngP.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIng1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnFrances">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaFra.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[96, 96]"/>
+        </Property>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaFraP.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFrancesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAleman">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaAleman.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[96, 96]"/>
+        </Property>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaAlemanP.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlemanActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnItaliano">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaItaliano.png"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[96, 96]"/>
+        </Property>
+        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vuelouy/image/IdiomaItalianoP.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnItalianoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
