@@ -9,7 +9,6 @@ package vuelouy.interfaz.common;
 import vuelouy.dominio.Viaje;
 import java.util.Calendar;
 import static java.util.Calendar.getInstance;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +20,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
      * Creates new form MenuConfiguracionPiloto
      */
     private Viaje viaje;
+    private ComunicacionPaneles comunicacion = ComunicacionPaneles.getInstance();
     
     /**
      *
@@ -61,9 +61,13 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
         cbNombrePasajero = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        lblOrigenError = new javax.swing.JLabel();
         lblDestinoError = new javax.swing.JLabel();
+        btnMerienda = new javax.swing.JButton();
+        lblOrigenError = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+
+        jPanel1.setAlignmentX(0.0F);
+        jPanel1.setAlignmentY(0.0F);
 
         jLabel7.setText("Número de Asiento: ");
 
@@ -118,27 +122,40 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
 
         jLabel3.setText("Destino:");
 
-        lblOrigenError.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
-        lblOrigenError.setForeground(new java.awt.Color(102, 102, 102));
-        lblOrigenError.setText("error origen");
-
         lblDestinoError.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         lblDestinoError.setForeground(new java.awt.Color(102, 102, 102));
         lblDestinoError.setText("error destino");
+
+        btnMerienda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnMerienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vuelouy/interfaz/common/Bundle"); // NOI18N
+        btnMerienda.setText(bundle.getString("MenuPedidos.btnMerienda.text")); // NOI18N
+        btnMerienda.setBorder(null);
+        btnMerienda.setBorderPainted(false);
+        btnMerienda.setContentAreaFilled(false);
+        btnMerienda.setFocusable(false);
+        btnMerienda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMerienda.setPreferredSize(new java.awt.Dimension(125, 96));
+        btnMerienda.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
+        btnMerienda.setRolloverEnabled(false);
+        btnMerienda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMeriendaActionPerformed(evt);
+            }
+        });
+
+        lblOrigenError.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        lblOrigenError.setForeground(new java.awt.Color(102, 102, 102));
+        lblOrigenError.setText("error destino");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(103, 103, 103)
-                        .addComponent(cbOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblOrigenError))
+                    .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -147,23 +164,25 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
                                     .addComponent(jLabel7)
                                     .addGap(6, 6, 6))
                                 .addComponent(jLabel6))
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbNroAsiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(104, 104, 104))
+                            .addComponent(cbNroAsiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(cbHoraDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(cbMinutoDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(cbNombrePasajero, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addComponent(lblDestinoError)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                    .addComponent(cbDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblOrigenError)
+                                    .addComponent(lblDestinoError))))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +191,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cbOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOrigenError))
+                    .addComponent(lblOrigenError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
@@ -192,7 +211,9 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(cbNroAsiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79))
+                .addGap(100, 100, 100)
+                .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -207,62 +228,71 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnMeriendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeriendaActionPerformed
+        if (cbOrigen.getSelectedItem().toString().equals(cbDestino.getSelectedItem().toString())) {
+            lblDestinoError.setText("Origen y Destino deben ser diferentes");
+            lblOrigenError.setText("Origen y Destino deben ser diferentes");
+        }else {
+            lblDestinoError.setText("");
+            lblOrigenError.setText("");
+            viaje.setOrigen(cbOrigen.getSelectedItem().toString());
+            viaje.setDestino(cbDestino.getSelectedItem().toString());
+            viaje.setNombrePasajero(cbNombrePasajero.getSelectedItem().toString());
+            viaje.setAsiento(cbNroAsiento.getSelectedItem().toString());
+            actualizarFecha();
+            comunicacion.cambio();
+        }
+    }//GEN-LAST:event_btnMeriendaActionPerformed
+
     private void cbNombrePasajeroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNombrePasajeroItemStateChanged
-        viaje.setNombrePasajero(cbNombrePasajero.getSelectedItem().toString());
+
     }//GEN-LAST:event_cbNombrePasajeroItemStateChanged
 
     private void cbNroAsientoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNroAsientoItemStateChanged
-        viaje.setAsiento(cbNroAsiento.getSelectedItem().toString());
+
     }//GEN-LAST:event_cbNroAsientoItemStateChanged
 
-    private void cbHoraDuracionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbHoraDuracionItemStateChanged
-        actualizarFecha();
-    }//GEN-LAST:event_cbHoraDuracionItemStateChanged
-
     private void cbMinutoDuracionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMinutoDuracionItemStateChanged
-        actualizarFecha();
-    }//GEN-LAST:event_cbMinutoDuracionItemStateChanged
 
-    private void cbOrigenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbOrigenItemStateChanged
-        if (cbOrigen.getSelectedItem().toString().equals(viaje.getDestino())) {
-            cbOrigen.setSelectedItem(viaje.getOrigen());
-            lblOrigenError.setText("Origen y Destino deben ser diferentes");
-        }else{
-            lblOrigenError.setText("");
-            viaje.setOrigen(cbOrigen.getSelectedItem().toString());
-        }
-    }//GEN-LAST:event_cbOrigenItemStateChanged
+    }//GEN-LAST:event_cbMinutoDuracionItemStateChanged
 
     private void cbDestinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbDestinoItemStateChanged
         if (cbDestino.getSelectedItem().toString().equals(viaje.getOrigen())) {
-            cbDestino.setSelectedItem(viaje.getDestino());
             lblDestinoError.setText("Origen y Destino deben ser diferentes");
-        }else{
-            lblDestinoError.setText("");
-            viaje.setDestino(cbDestino.getSelectedItem().toString());
         }
     }//GEN-LAST:event_cbDestinoItemStateChanged
 
+    private void cbHoraDuracionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbHoraDuracionItemStateChanged
+
+    }//GEN-LAST:event_cbHoraDuracionItemStateChanged
+
+    private void cbOrigenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbOrigenItemStateChanged
+        if (cbOrigen.getSelectedItem().toString().equals(viaje.getDestino())) {
+            lblOrigenError.setText("Origen y Destino deben ser diferentes");
+        }
+    }//GEN-LAST:event_cbOrigenItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnMerienda;
     private javax.swing.JComboBox cbDestino;
     private javax.swing.JComboBox cbHoraDuracion;
     private javax.swing.JComboBox cbMinutoDuracion;
