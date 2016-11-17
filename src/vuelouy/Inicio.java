@@ -25,7 +25,7 @@ public class Inicio {
     public static void main(String[] args) {
         
         Viaje v = new Viaje("Montevideo", "Buenos Aires", "Luis Suarez", "1", 2014, 20, 10, 19, 0, 0, 1, 0);
-        ComunicacionPaneles com = new ComunicacionPaneles();
+        ComunicacionPaneles com = ComunicacionPaneles.getInstance();
         Locale locale = new Locale("es","ES");
         Locale.setDefault(locale);
         com.setIdioma(locale);

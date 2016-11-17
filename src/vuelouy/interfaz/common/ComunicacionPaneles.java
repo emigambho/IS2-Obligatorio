@@ -39,16 +39,21 @@ public class ComunicacionPaneles extends Observable implements ActionListener{
     
     private boolean silencio;
 
+    private static final ComunicacionPaneles INSTANCIA = new ComunicacionPaneles();
     
     /**
      * Constructor sin paramentros, con valores por defecto.
      */
-    public ComunicacionPaneles() {
-        this.setPanel("");
-        this.setBIdioma(false);
-        this.setBPanel(false);
-        this.setbMensaje(false);
-        this.setSilencio(false);
+    private ComunicacionPaneles() {
+        this.panel = "";
+        this.bIdioma = false;
+        this.bPanel = false;
+        this.bMensaje = false;
+        this.silencio = false;
+    }
+    
+    public static ComunicacionPaneles getInstance() {
+        return INSTANCIA;
     }
 
     /**

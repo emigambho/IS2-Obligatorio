@@ -7,15 +7,10 @@ package vuelouy.interfaz.common;
 
 import vuelouy.dominio.Pedido;
 import vuelouy.dominio.Viaje;
-import java.awt.Font;
-import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.border.TitledBorder;
-
 /**
  *
  * @author Usuario
@@ -82,8 +77,8 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         btnRefresco.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnRefresco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
         btnRefresco.setText(bundle.getString("MenuPedidos.btnRefresco.text")); // NOI18N
+        btnRefresco.setBorderPainted(false);
         btnRefresco.setContentAreaFilled(false);
-        btnRefresco.setHideActionText(true);
         btnRefresco.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnRefresco.setPreferredSize(new java.awt.Dimension(300, 28));
         btnRefresco.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
@@ -97,8 +92,8 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         btnCafe.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnCafe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
         btnCafe.setText(bundle.getString("MenuPedidos.btnCafe.text")); // NOI18N
+        btnCafe.setBorderPainted(false);
         btnCafe.setContentAreaFilled(false);
-        btnCafe.setHideActionText(true);
         btnCafe.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnCafe.setPreferredSize(new java.awt.Dimension(300, 28));
         btnCafe.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
@@ -112,8 +107,8 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         btnAgua.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnAgua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
         btnAgua.setText(bundle.getString("MenuPedidos.btnAgua.text")); // NOI18N
+        btnAgua.setBorderPainted(false);
         btnAgua.setContentAreaFilled(false);
-        btnAgua.setHideActionText(true);
         btnAgua.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnAgua.setPreferredSize(new java.awt.Dimension(300, 28));
         btnAgua.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
@@ -129,8 +124,8 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         btnWhisky.setText("Whisky"); // NOI18N
         btnWhisky.setToolTipText(bundle.getString("MenuPedidos.btnWhisky.toolTipText")); // NOI18N
         btnWhisky.setActionCommand(bundle.getString("MenuPedidos.btnWhisky.actionCommand")); // NOI18N
+        btnWhisky.setBorderPainted(false);
         btnWhisky.setContentAreaFilled(false);
-        btnWhisky.setHideActionText(true);
         btnWhisky.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnWhisky.setPreferredSize(new java.awt.Dimension(300, 28));
         btnWhisky.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
@@ -280,7 +275,6 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         btnAlmohada.setText(bundle.getString("MenuPedidos.btnAlmohada.text")); // NOI18N
         btnAlmohada.setBorderPainted(false);
         btnAlmohada.setContentAreaFilled(false);
-        btnAlmohada.setFocusable(false);
         btnAlmohada.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnAlmohada.setPreferredSize(new java.awt.Dimension(300, 28));
         btnAlmohada.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
