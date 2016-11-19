@@ -83,7 +83,7 @@ public class ManejadorArchivos {
         return canciones;
     }
     
-    private File obtenerFichero(String path){
+    public File obtenerFichero(String path){
         File folder = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
         if(folder.isFile()) {  
             return folder;
