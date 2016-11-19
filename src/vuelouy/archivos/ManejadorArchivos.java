@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
@@ -23,6 +26,8 @@ import vuelouy.dominio.*;
  * @author emiga
  */
 public class ManejadorArchivos {
+    
+    private final static String  RAIZ = "C:/";
 
     public ManejadorArchivos() {
     }
@@ -83,22 +88,39 @@ public class ManejadorArchivos {
         return canciones;
     }
     
-    public File obtenerFichero(String path){
-        File folder = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
-        if(folder.isFile()) {  
-            return folder;
+    public File obtenerFichero2(String path){
+        File fichero = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath());
+        if(fichero.isFile()) {  
+            try {
+                final JarFile jar = new JarFile(fichero);
+                final Enumeration<JarEntry> entries = jar.entries(); //gives ALL entries in jar
+                while(entries.hasMoreElements()) {
+                    final String name = entries.nextElement().getName();
+                    if (name.startsWith(path + "/")) { //filter according to the path
+                        System.out.println(name);
+                    }
+                }
+                jar.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else { 
             //TODO: Cambiar este metodo antes de que depreque
             final URL url = Launcher.class.getResource("/" + path);
             if (url != null) {
                 try {
-                    folder = new File(url.toURI());
-                    return folder;
+                    fichero = new File(url.toURI());
+                    return fichero;
                 } catch (URISyntaxException ex) {
                     Logger.getLogger(ManejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
         return null;
+    }
+    
+    public File obtenerFichero(String path){
+        File fichero = new File(RAIZ+path);
+        return fichero;
     }
 }

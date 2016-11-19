@@ -209,8 +209,8 @@ public class ComunicacionPaneles extends Observable implements ActionListener{
     }
     
      public String obtenerValorTraducido(String fieldKey) {
-        return ResourceBundle.getBundle("vuelouy/interfaz/common/Bundle",this.getIdioma())
-                .getString(fieldKey);
+        return ResourceBundle.getBundle("vuelouy/interfaz/common/Bundle",
+                this.getIdioma()).getString(fieldKey);
      }
     
     

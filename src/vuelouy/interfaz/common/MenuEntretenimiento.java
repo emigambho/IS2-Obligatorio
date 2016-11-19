@@ -251,10 +251,20 @@ public class MenuEntretenimiento extends javax.swing.JPanel implements Observer 
             comunicacion.getVentanaInicioP().mostrarSubMenu(comunicacion.getPanel());
             comunicacion.setBPanel(false);
         }
-        lblMusica.setText(comunicacion.obtenerValorTraducido("MenuEntretenimiento.lblMusica.text"));
-        lblCamaraExterna.setText(comunicacion.obtenerValorTraducido("MenuEntretenimiento.lblCamaraExterna.text"));
-        lblLectura.setText(comunicacion.obtenerValorTraducido("MenuEntretenimiento.lblLectura.text"));
-        lblPintura.setText(comunicacion.obtenerValorTraducido("MenuEntretenimiento.lblPintura.text"));
-        lblEntretenimiento.setText(comunicacion.obtenerValorTraducido("MenuEntretenimiento.lblEntretenimiento.text"));
+        
+        lblMusica.setText(comunicacion.obtenerValorTraducido(
+                "MenuEntretenimiento.lblMusica.text"));
+        
+        lblCamaraExterna.setText(comunicacion.obtenerValorTraducido(
+                "MenuEntretenimiento.lblCamaraExterna.text"));
+        
+        lblLectura.setText(comunicacion.obtenerValorTraducido(
+                "MenuEntretenimiento.lblLectura.text"));
+        
+        lblPintura.setText(comunicacion.obtenerValorTraducido(
+                "MenuEntretenimiento.lblPintura.text"));
+        
+        lblEntretenimiento.setText(comunicacion.obtenerValorTraducido(
+                "MenuEntretenimiento.lblEntretenimiento.text"));
     }
 }
