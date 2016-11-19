@@ -37,19 +37,13 @@ public class MusicaTest {
     public void setUp() {
         
         mus = new Musica();
-        rutaMusica = "/vuelosUY/sonidos/wavv.wav";;
+        rutaMusica = "/vuelosUY/sonidos/wavv.wav";
     }
     
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-    
     @Test
     public void testAccesorMusica() {
         assertEquals(rutaMusica, mus.getCancion());

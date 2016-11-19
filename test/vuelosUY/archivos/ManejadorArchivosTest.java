@@ -1,4 +1,4 @@
-package vuelosUY.dominio;
+package vuelosUY.archivos;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,7 +22,7 @@ import org.junit.Test;
  *
  * @author alumnoFI
  */
-public class ViajeTest {
+public class ManejadorArchivosTest {
     
     /**
      *
@@ -43,13 +43,13 @@ public class ViajeTest {
     /**
      *
      */
-        public ViajeTest() {
+        public ManejadorArchivosTest() {
         }
     
     /**
      *
      */
-        @Before
+    @Before
     public void setUp() {
         viaje1 = new Viaje("Montevideo", "Buenos Aires", "Camila", "11", 2014, 10, 20, 11, 0, 0, 2, 30);
         pedido = new Pedido("11", "Whisky");
@@ -62,14 +62,11 @@ public class ViajeTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-
-    // The methods must be annotated with annotation @Test.
 
     /**
      *
      */
-        @Test
+    @Test
     public void testAccesorOrigen() {
         assertEquals(viaje1.getOrigen(), "Montevideo");
         assertNotSame(viaje1.getOrigen(), "MONTEVIDEO");
@@ -79,7 +76,7 @@ public class ViajeTest {
     /**
      *
      */
-        @Test
+    @Test
     public void testAccesorAsiento() {
         assertEquals(viaje1.getAsiento(), "11");
         assertNotSame(viaje1.getAsiento(), 11);
@@ -88,7 +85,7 @@ public class ViajeTest {
     /**
      *
      */
-        @Test
+    @Test
     public void testAccesorDestimo() {
         assertEquals(viaje1.getDestino(), "Buenos Aires");
         assertNotSame(viaje1.getDestino(), "buenos aires");
@@ -100,9 +97,9 @@ public class ViajeTest {
     /**
      *
      */
-        @Test
+    @Test
     public void testAccesorNombrePasajero() {
-        assertEquals(viaje1.getNombrePasajero(), "Camila");
+        assertEquals(viaje1.getNombrePasajero(), "Luis Suarez");
         assertNotSame(viaje1.getNombrePasajero(), "Luis Suarez");
         assertNotSame(viaje1.getNombrePasajero(), "Luis Suarez");
     }
