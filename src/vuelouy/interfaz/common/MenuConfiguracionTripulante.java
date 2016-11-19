@@ -9,6 +9,8 @@ package vuelouy.interfaz.common;
 import vuelouy.dominio.Viaje;
 import java.util.Calendar;
 import static java.util.Calendar.getInstance;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -20,7 +22,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
      * Creates new form MenuConfiguracionPiloto
      */
     private Viaje viaje;
-    private ComunicacionPaneles comunicacion = ComunicacionPaneles.getInstance();
+    private final ComunicacionPaneles comunicacion = ComunicacionPaneles.getInstance();
     
     /**
      *
@@ -62,7 +64,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblDestinoError = new javax.swing.JLabel();
-        btnMerienda = new javax.swing.JButton();
+        btnConfirmacion = new javax.swing.JButton();
         lblOrigenError = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -126,21 +128,21 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
         lblDestinoError.setForeground(new java.awt.Color(102, 102, 102));
         lblDestinoError.setText("error destino");
 
-        btnMerienda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnMerienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
+        btnConfirmacion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnConfirmacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/Btn.png"))); // NOI18N
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vuelouy/interfaz/common/Bundle"); // NOI18N
-        btnMerienda.setText(bundle.getString("MenuPedidos.btnMerienda.text")); // NOI18N
-        btnMerienda.setBorder(null);
-        btnMerienda.setBorderPainted(false);
-        btnMerienda.setContentAreaFilled(false);
-        btnMerienda.setFocusable(false);
-        btnMerienda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnMerienda.setPreferredSize(new java.awt.Dimension(125, 96));
-        btnMerienda.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
-        btnMerienda.setRolloverEnabled(false);
-        btnMerienda.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmacion.setText(bundle.getString("MenuPedidos.btnMerienda.text")); // NOI18N
+        btnConfirmacion.setBorder(null);
+        btnConfirmacion.setBorderPainted(false);
+        btnConfirmacion.setContentAreaFilled(false);
+        btnConfirmacion.setFocusable(false);
+        btnConfirmacion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnConfirmacion.setPreferredSize(new java.awt.Dimension(125, 96));
+        btnConfirmacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/vuelouy/image/BtnP.png"))); // NOI18N
+        btnConfirmacion.setRolloverEnabled(false);
+        btnConfirmacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMeriendaActionPerformed(evt);
+                btnConfirmacionActionPerformed(evt);
             }
         });
 
@@ -155,7 +157,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConfirmacion, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -212,7 +214,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(cbNroAsiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100)
-                .addComponent(btnMerienda, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnConfirmacion, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -246,10 +248,11 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMeriendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeriendaActionPerformed
+    private void btnConfirmacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmacionActionPerformed
         if (cbOrigen.getSelectedItem().toString().equals(cbDestino.getSelectedItem().toString())) {
             lblDestinoError.setText("Origen y Destino deben ser diferentes");
             lblOrigenError.setText("Origen y Destino deben ser diferentes");
+            showMessageDialog(this, "Existen errores en origen y destino", "Error", JOptionPane.ERROR_MESSAGE);
         }else {
             lblDestinoError.setText("");
             lblOrigenError.setText("");
@@ -260,7 +263,7 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
             actualizarFecha();
             comunicacion.cambio();
         }
-    }//GEN-LAST:event_btnMeriendaActionPerformed
+    }//GEN-LAST:event_btnConfirmacionActionPerformed
 
     private void cbNombrePasajeroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbNombrePasajeroItemStateChanged
 
@@ -275,8 +278,12 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
     }//GEN-LAST:event_cbMinutoDuracionItemStateChanged
 
     private void cbDestinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbDestinoItemStateChanged
-        if (cbDestino.getSelectedItem().toString().equals(viaje.getOrigen())) {
+        if (cbOrigen.getSelectedItem().toString().equals(cbDestino.getSelectedItem().toString())) {
             lblDestinoError.setText("Origen y Destino deben ser diferentes");
+            lblOrigenError.setText("Origen y Destino deben ser diferentes");
+        } else {
+            lblDestinoError.setText("");
+            lblOrigenError.setText("");
         }
     }//GEN-LAST:event_cbDestinoItemStateChanged
 
@@ -285,14 +292,18 @@ public class MenuConfiguracionTripulante extends javax.swing.JPanel {
     }//GEN-LAST:event_cbHoraDuracionItemStateChanged
 
     private void cbOrigenItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbOrigenItemStateChanged
-        if (cbOrigen.getSelectedItem().toString().equals(viaje.getDestino())) {
+        if (cbOrigen.getSelectedItem().toString().equals(cbDestino.getSelectedItem().toString())) {
+            lblDestinoError.setText("Origen y Destino deben ser diferentes");
             lblOrigenError.setText("Origen y Destino deben ser diferentes");
+        } else {
+            lblDestinoError.setText("");
+            lblOrigenError.setText("");
         }
     }//GEN-LAST:event_cbOrigenItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMerienda;
+    private javax.swing.JButton btnConfirmacion;
     private javax.swing.JComboBox cbDestino;
     private javax.swing.JComboBox cbHoraDuracion;
     private javax.swing.JComboBox cbMinutoDuracion;

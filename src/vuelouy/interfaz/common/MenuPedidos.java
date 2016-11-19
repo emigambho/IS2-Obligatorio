@@ -377,84 +377,84 @@ public class MenuPedidos extends javax.swing.JPanel implements Observer {
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Refresco"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnRefrescoActionPerformed
 
     private void btnCafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCafeActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Cafe"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnCafeActionPerformed
 
     private void btnAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAguaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Agua Mineral"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAguaActionPerformed
 
     private void btnWhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWhiskyActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Whisky"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnWhiskyActionPerformed
 
     private void btnCenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCenaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Cena"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnCenaActionPerformed
 
     private void btnMeriendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMeriendaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Merienda"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnMeriendaActionPerformed
 
     private void btnDesayunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesayunoActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Desayuno"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnDesayunoActionPerformed
 
     private void btnAlmuerzoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlmuerzoActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Almuerzo"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAlmuerzoActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Ayuda"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnAlmohadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlmohadaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Almohada"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAlmohadaActionPerformed
 
     private void btnAuricularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAuricularesActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Auriculares"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAuricularesActionPerformed
 
     private void btnMantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMantaActionPerformed
         viaje.agregarPedido(new Pedido(viaje.getAsiento(), "Manta"));
         comunicacion.setPanel(" ");
         comunicacion.cambio();
-        showMessageDialog(this, "Pedido Realizado", "", JOptionPane.INFORMATION_MESSAGE);
+        showMessageDialog(this, comunicacion.obtenerValorTraducido("MenuPedidos.mensaje"), "", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnMantaActionPerformed
 
 
